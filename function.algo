@@ -1,0 +1,29 @@
+FUNCTION Vect(V1,V2 : ARRAY_OF INTEGER[]) : INTEGER
+VAR
+    sum : INTEGER := 0 ;
+BEGIN
+     FOR i FROM 1 TO V1.length STEP 1  DO
+        sum := sum + V1[i]*V2[i];
+    END_FOR
+    RETURN sum ;
+END
+
+ALGORITHM Check
+VAR
+    tab : ARRAY_OF INTEGER[];
+    tab1 : ARRAY_OF INTEGER[];
+    res : INTEGER:=0;
+BEGIN
+    IF  (tab.length != tab1.length) THEN
+        write("error");
+   ELSE_IF (tab.length != 2 OR tab.length != 3) THEN
+        write("error");
+   ELSE
+   res := Vect(tab,tab1);
+   IF (res=0) THEN
+            write("orthogonale");
+        ELSE
+            write("non orthogonale");
+        END_IF
+   END_IF
+END
